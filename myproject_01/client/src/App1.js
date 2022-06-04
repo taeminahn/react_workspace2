@@ -3,17 +3,17 @@ import "./App.css";
 import Customer from "./part01_basic/Customer";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
+import TableBody from "@mui/material/TableBody";
+import { TableCell } from "@mui/material";
 import Paper from "@mui/material/Paper";
 
-// 컴포넌트에서 사용되는 데이터 값의 기억공간 : 상태(State)
+//컴포넌트에서 사용되는 데이터 값의 기억공간 : 상태(state)
 function App() {
   const customers = [
     {
       id: 1,
-      image: "https://placeimg.com/65/65/1",
+      image: "https://placeimg.com/64/64/1",
       name: "고수",
       birthday: "780604",
       gender: "남자",
@@ -21,19 +21,19 @@ function App() {
     },
     {
       id: 2,
-      image: "https://placeimg.com/65/65/2",
-      name: "안태민",
-      birthday: "940806",
-      gender: "남자",
-      email: "taeminahn2@gmail.com",
+      image: "https://placeimg.com/64/64/2",
+      name: "김연아",
+      birthday: "980426",
+      gender: "여자",
+      email: "kim@daum.net",
     },
     {
       id: 3,
-      image: "https://placeimg.com/65/65/3",
-      name: "김연아",
-      birthday: "900905",
-      gender: "여자",
-      email: "kim@daum.net",
+      image: "https://placeimg.com/64/64/3",
+      name: "박태환",
+      birthday: "901206",
+      gender: "남자",
+      email: "park@naver.com",
     },
   ];
   return (
@@ -54,6 +54,7 @@ function App() {
         gender={customers[1].gender}
         email={customers[1].email}
       />
+
       <Customer
         id={customers[2].id}
         image={customers[2].image}
@@ -62,6 +63,7 @@ function App() {
         gender={customers[2].gender}
         email={customers[2].email}
       /> */}
+
       <Table sx={{ minWidth: 650 }}>
         <TableHead>
           <TableRow>
@@ -76,6 +78,7 @@ function App() {
         <TableBody>
           {customers.map((c) => {
             return (
+              // Each child in a list should have a unique "key" prop.
               <Customer
                 key={c.id}
                 id={c.id}
@@ -93,4 +96,4 @@ function App() {
   );
 }
 
-export default App1;
+export default App;
